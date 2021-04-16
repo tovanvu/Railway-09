@@ -96,7 +96,7 @@ public class DemoProgram {
 		TypeQuestion typeQues3 = new TypeQuestion();
 		typeQues3.id = 3;
 		typeQues3.name = TypeName.ESSAY;
-
+		
 //		create TypeQuestion
 		CategoryQuestion categoryQues1 = new CategoryQuestion();
 		categoryQues1.id = 1;
@@ -107,7 +107,7 @@ public class DemoProgram {
 		CategoryQuestion categoryQues3 = new CategoryQuestion();
 		categoryQues3.id = 3;
 		categoryQues3.name = "name3";
-
+		
 //		create Question	
 		Question Ques1 = new Question();
 		Ques1.id = 1;
@@ -130,7 +130,7 @@ public class DemoProgram {
 		Ques3.typeQuestion = typeQues3;
 		Ques3.creatorID = acc2;
 		Ques3.createDate = LocalDate.of(1997, 8, 07);
-
+		
 //		create Answer
 		Answer answer1 = new Answer();
 		answer1.id = 1;
@@ -150,7 +150,7 @@ public class DemoProgram {
 		answer3.question = Ques2;
 		answer3.creatorID = acc1;
 		answer3.isCorrect = false;
-
+		
 //		create Exam
 		Exam exam1 = new Exam();
 		exam1.id = 1;
@@ -160,7 +160,7 @@ public class DemoProgram {
 		exam1.duration = Duration.minute_60;
 		exam1.creatorID = acc2;
 		exam1.createDate = LocalDate.of(2006, 9, 7);
-		exam1.questions = new Question[] { Ques1, Ques3 };
+		exam1.questions = new Question[] {Ques1, Ques3};
 		Exam exam2 = new Exam();
 		exam2.id = 2;
 		exam2.code = 5136;
@@ -169,7 +169,7 @@ public class DemoProgram {
 		exam2.duration = Duration.minute_90;
 		exam2.creatorID = acc3;
 		exam2.createDate = LocalDate.of(2006, 4, 7);
-		exam2.questions = new Question[] { Ques3, Ques2 };
+		exam2.questions = new Question[] {Ques2, Ques3};
 		Exam exam3 = new Exam();
 		exam3.id = 3;
 		exam3.code = 5614;
@@ -178,30 +178,63 @@ public class DemoProgram {
 		exam3.duration = Duration.minute_120;
 		exam3.creatorID = acc1;
 		exam3.createDate = LocalDate.of(2010, 9, 7);
-		exam3.questions = new Question[] { Ques1, Ques2 };
+		exam3.questions = new Question[] {Ques1, Ques2};
+		
+// Question 3: Trong file Program.java, hãy in ít nhất 1 giá trị của mỗi đối tượng ra		
+		System.out.println("Phong So 1");
+		System.out.println("ID:" + dep1.id);
+		System.out.println("Name:" + dep1.name);
 
-// Exercise 1 (Optional): Flow Control Question 1
-// Question 1:
-		if (acc2.dep == null) {
-			System.out.println("Nhân viên này chưa có phòng ban");
-		} else {
-			System.out.println("Phòng ban của nhân viên này là :" + acc2.dep.name);
-		}
-// Question 2:
-		if (acc2.groups == null) {
-			System.out.println("Nhân viên này chưa có group");
-		} else if (acc2.groups.length == 1 || acc2.groups.length == 2) {
-			System.out.println("Group của nhân viên này là Java Fresher, C# Fresher");
-		} else if (acc2.groups.length == 3) {
-			System.out.println("Nhân viên này là người quan trọng, tham gia nhiều group");
-		} else if (acc2.groups.length >= 4) {
-			System.out.println("Nhân viên này là người hóng chuyện, tham gia tất cả các group");
-		}
-// Question 4:
-		if (acc1.positon.name == PositionName.DEV) {
-			System.out.println("Đây là Developer");
-		} else {
-			System.out.println("Người này không phải là Developer");
-		}
-	}
-}
+		System.out.println("Vi Tri So 1");
+		System.out.println("ID:" + pos1.id);
+		System.out.println("Name:" + pos1.name);
+
+		System.out.println("Account So 1");
+		System.out.println("ID:" + acc1.id);
+		System.out.println("Email:" + acc1.email);
+		System.out.println("User:" + acc1.userName);
+		System.out.println("FullName:" + acc1.fullName);
+		System.out.println("Ten Phong:" + acc1.dep.name);
+		System.out.println("Ten Vi Tri:" + acc1.positon.name);
+		System.out.println("Ngay Tao:" + acc1.createDate);
+
+		System.out.println("Group Số 1");
+		System.out.println("ID:" + group1.id);
+		System.out.println("Name:" + group1.name);
+		System.out.println("Tên thành viên:" + group1.creatorId.fullName);
+		System.out.println("Ngày Tạo:" + group1.createDate);
+		
+		System.out.println("Loại câu hỏi số 2");
+		System.out.println("ID:" + typeQues2.id);
+		System.out.println("Name:" + typeQues2.name);
+		
+		System.out.println("CategoryQuestion số 1");
+		System.out.println("ID:" + categoryQues1.id);
+		System.out.println("Name:" + categoryQues1.name);
+		
+		System.out.println("Câu Hỏi số 1");
+		System.out.println("ID:" + Ques1.id);
+		System.out.println("Câu Hỏi:" + Ques1.content);
+		System.out.println("Tên CategoryQuestion:" + Ques1.categoryQues.name);
+		System.out.println("Kiểu câu hỏi:" + Ques1.typeQuestion.name);
+		System.out.println("Tên Người Hỏi:" + Ques1.creatorID.fullName);
+		System.out.println("Ngày Tạo:" + Ques1.createDate);
+		
+		System.out.println("Đáp án số 3");
+		System.out.println("ID:" + answer3.id);
+		System.out.println("Đáp Án:" + answer3.content);
+		System.out.println("Câu Hỏi:" + answer3.question.content);
+		System.out.println("Người Giải:" + answer3.creatorID.fullName);
+		System.out.println("Đúng hay Sai:" + answer3.isCorrect);
+		
+		System.out.println("Bài Kiểm tra số 1");
+		System.out.println("ID:" + exam1.id);
+		System.out.println("Mã đề:" + exam1.code);
+		System.out.println("Loại đề:" + exam1.title);
+		System.out.println("Tên CategoryQuestion:" + exam1.category.name);
+		System.out.println("Thời Gian Thi:" + exam1.duration);
+		System.out.println("Người thi:" + exam1.creatorID.fullName);
+		System.out.println("Ngày Thi:" + exam1.createDate);
+	}		
+}		
+		
